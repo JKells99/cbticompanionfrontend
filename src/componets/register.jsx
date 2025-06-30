@@ -24,6 +24,11 @@ const Register = () => {
         try {
             await registerUser(formData.username, formData.password, formData.role);
             setMessage("Registration successful! Please log in.");
+            setFormData({
+                username: '',
+                password: '',
+                role: 'client'
+            });
         } catch (e) {
             console.log(e);
             setError( 'Registration failed');
